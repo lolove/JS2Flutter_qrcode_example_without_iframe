@@ -8,27 +8,12 @@
         <h1>Qrcode result</h1>
         <h2 id="resulttext">nothing</h2>
         <script>
-          
-            alert("123")
             window.addEventListener("flutterInAppWebViewPlatformReady", function(event) {
-              alert("456")
                 window.flutter_inappwebview.callHandler('QrScanner')
                   .then(function(result) {
-                    //result : qrcode data
-                    // **********type your code here**********
                     console.log("result:");
                     document.getElementById("resulttext").innerText = result;
                     console.log(JSON.stringify(result));
-                    // **********type your code here**********
-                });
-                window.flutter_inappwebview.callHandler('getGPSInfo')
-                  .then(function(result) {
-                    //result : qrcode data
-                    // **********type your code here**********
-                    // console.log("result:");
-                    // document.getElementById("resulttext").innerText = JSON.stringify(result);
-                    console.log(JSON.stringify(result));
-                    // **********type your code here**********
                 });
             });
         </script>
